@@ -1,9 +1,17 @@
-import {StyleSheet, Text, View, TouchableOpacity, FlatList} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  TouchableOpacity,
+  FlatList,
+} from 'react-native';
 import React from 'react';
 import Artists_Card from '../Components/Artists_Card';
 
-const Shop_Hair_Artists = () => {
+const Shop_Hair_Artists = ({navigation}) => {
   const img1 = require('../assets/Artists/artist1.png');
+  const img2 = require('../assets/Artists/artist2.png');
 
   const artists = [
     {
@@ -15,7 +23,7 @@ const Shop_Hair_Artists = () => {
     {
       title: 'Richard Watts',
       tag: 'Cutting Line Studio',
-      image: img1,
+      image: img2,
       star: '4.2',
     },
     {
@@ -27,19 +35,20 @@ const Shop_Hair_Artists = () => {
     {
       title: 'Richard Watts',
       tag: 'Cutting Line Studio',
-      image: img1,
+      image: img2,
       star: '4.2',
     },
   ];
 
   return (
-    <View style={{margin: 10}}>
+    <View style={{margin: 10, flex: 1}}>
       <View
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
           marginBottom: 10,
+          paddingHorizontal: 20,
         }}>
         <Text style={{fontSize: 18, color: '#000', fontWeight: 'bold'}}>
           Shop Hair Artists
@@ -48,22 +57,36 @@ const Shop_Hair_Artists = () => {
           <Text style={{color: 'purple'}}>See All</Text>
         </TouchableOpacity>
       </View>
-
-      <FlatList
-      showsVerticalScrollIndicator={false}
-        data={artists}
-        renderItem={item => (
-          <TouchableOpacity activeOpacity={0.9}>
-            <Artists_Card
-              title={item.item.title}
-              image={item.item.image}
-              tag={item.item.tag}
-              star={item.item.star}
-              buttonText={'View Details'}
-            />
-          </TouchableOpacity>
-        )}
-      />
+      <View style={{flex: 1}}>
+        <FlatList
+          nestedScrollEnabled={true}
+          showsVerticalScrollIndicator={false}
+          data={artists}
+          keyExtractor={(item, index) => index}
+          ListFooterComponent={() => <View style={{height: 15}} />}
+          ListHeaderComponent={() => <View style={{height: 15}} />}
+          renderItem={item => (
+            <TouchableOpacity
+              activeOpacity={0.9}
+              onPress={() =>
+                navigation.navigate('artist_detail', {
+                  title: item.item.title,
+                  image: item.item.image,
+                  tag: item.item.tag,
+                  star: item.item.star,
+                })
+              }>
+              <Artists_Card
+                title={item.item.title}
+                image={item.item.image}
+                tag={item.item.tag}
+                star={item.item.star}
+                buttonText={'View Details'}
+              />
+            </TouchableOpacity>
+          )}
+        />
+      </View>
     </View>
   );
 };

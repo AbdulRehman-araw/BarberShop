@@ -38,12 +38,19 @@ const Popular_services = () => {
   ];
 
   return (
-    <View style={{margin:10}}>
+    <View
+      style={{
+        margin: 10,
+        backgroundColor: 'white',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+      }}>
       <View
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
+          paddingHorizontal: 20,
         }}>
         <Text style={{fontSize: 18, color: '#000', fontWeight: 'bold'}}>
           Popular Services
@@ -56,7 +63,7 @@ const Popular_services = () => {
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         data={service}
-        keyExtractor={(item,index) => index}
+        keyExtractor={(item, index) => index}
         renderItem={item => (
           <TouchableOpacity activeOpacity={0.9}>
             <Services_Card title={item.item.title} image={item.item.image} />
