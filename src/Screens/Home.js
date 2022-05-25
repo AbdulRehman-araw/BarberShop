@@ -9,17 +9,7 @@ const Home = ({navigation}) => {
       style={{flex: 1, backgroundColor: 'purple', justifyContent: 'flex-end'}}>
       <View
         style={{
-          flex: 0.1,
-          justifyContent: 'space-around',
-          flexDirection: 'row',
-        }}>
-        <Text style={{color: '#fff'}}>Menu</Text>
-        <Text>Menu</Text>
-        <Text>Menu</Text>
-      </View>
-      <View
-        style={{
-          flex: 0.85,
+          flex: 0.9,
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
           backgroundColor: 'white',

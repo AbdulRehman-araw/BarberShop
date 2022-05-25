@@ -59,7 +59,6 @@ const Shop_Hair_Artists = ({navigation}) => {
       </View>
       <View style={{flex: 1}}>
         <FlatList
-          nestedScrollEnabled={true}
           showsVerticalScrollIndicator={false}
           data={artists}
           keyExtractor={(item, index) => index}

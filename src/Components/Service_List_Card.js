@@ -1,24 +1,41 @@
-import {StyleSheet, Text, View, CheckBox} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+
+/* -------------------------------- CheckBox -------------------------------- */
+import CheckBox from '@react-native-community/checkbox';
 
 const Service_List_Card = ({title, time, price}) => {
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+
   return (
-    <View style={styles.mainContainer}>
-      <View style={{flexDirection: 'row'}}>
-        <View>
-          <CheckBox
-            value={isSelected}
-            onValueChange={setSelection}
-            style={styles.checkbox}
-          />
-        </View>
-        <View>
-          <Text>{title}</Text>
-          <Text>{time}</Text>
+    <View
+      style={{
+        flexDirection: 'row',
+        backgroundColor: toggleCheckBox ? '#fff' : '#fff',
+        elevation: toggleCheckBox ? 6 : 0,
+        borderRadius: 10,
+        borderWidth: toggleCheckBox ? 0 : 1,
+        borderColor: '#ccc',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 8,
+        margin: 8,
+      }}>
+      <View style={styles.leftItems}>
+        <CheckBox
+          style={{}}
+          disabled={false}
+          value={toggleCheckBox}
+          onValueChange={newValue => setToggleCheckBox(newValue)}
+          tintColors={{true: 'purple', false: '#ccc'}}
+        />
+        <View style={{}}>
+          <Text style={styles.boldText}>{title}</Text>
+          <Text style={styles.lightText}>{time}</Text>
         </View>
       </View>
       <View>
-        <Text>{price}</Text>
+        <Text style={styles.boldText}>{price}</Text>
       </View>
     </View>
   );
@@ -27,11 +44,15 @@ const Service_List_Card = ({title, time, price}) => {
 export default Service_List_Card;
 
 const styles = StyleSheet.create({
-  mainContainer: {
+  leftItems: {
     flexDirection: 'row',
-    backgroundColor: '#fff',
-    elevation: 6,
-    borderRadius: 10,
-    justifyContent: 'space-around',
+  },
+  boldText: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  lightText: {
+    fontSize: 10,
   },
 });
