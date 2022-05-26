@@ -7,13 +7,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import Popular_services from './Popular_services';
-import Shop_Hair_Artists from './Shop_Hair_Artists';
 import Service_List_Card from '../Components/Service_List_Card';
 import CustomButton from './../Components/CustomButton';
 
 const Artist_detail = ({route, navigation}) => {
-  const {title, star, tag, image} = route.params;
+  const {title, starRating, tag, star, image} = route.params;
 
   const service_list = [
     {
@@ -71,7 +69,14 @@ const Artist_detail = ({route, navigation}) => {
               {title}
             </Text>
             <Text style={{fontSize: 14}}>{tag}</Text>
-            <Text style={{fontSize: 14}}>{star}</Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <Text style={{fontSize: 14}}>{starRating}</Text>
+              <Image source={star} style={{height: 10, width: 10, left: 5}} />
+            </View>
           </View>
           <Image
             source={image}
@@ -120,7 +125,10 @@ const Artist_detail = ({route, navigation}) => {
           />
         </View>
         <View style={{justifyContent: 'flex-end'}}>
-          <CustomButton title="Book Now" navigation={navigation} />
+          <CustomButton
+            title="Book Now"
+            navigation={() => navigation.navigate('BookNow')}
+          />
         </View>
       </View>
     </View>

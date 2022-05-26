@@ -49,7 +49,7 @@ const App = () => {
           name="artist_detail"
           component={Artist_detail}
           options={{
-            headerTransparent: true,
+            headerShown: false,
           }}
         />
         <Stack.Screen

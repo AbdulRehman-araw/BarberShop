@@ -12,31 +12,36 @@ import Artists_Card from '../Components/Artists_Card';
 const Shop_Hair_Artists = ({navigation}) => {
   const img1 = require('../assets/Artists/artist1.png');
   const img2 = require('../assets/Artists/artist2.png');
+  const star = require('../assets/icons/star.png');
 
   const artists = [
     {
       title: 'David McMinn',
       tag: 'Hair Castle',
       image: img1,
-      star: '4.7',
+      starRating: '4.7',
+      star: star,
     },
     {
       title: 'Richard Watts',
       tag: 'Cutting Line Studio',
       image: img2,
-      star: '4.2',
+      starRating: '4.2',
+      star: star,
     },
     {
       title: 'David McMinn',
       tag: 'Hair Castle',
       image: img1,
-      star: '4.7',
+      starRating: '4.7',
+      star: star,
     },
     {
       title: 'Richard Watts',
       tag: 'Cutting Line Studio',
       image: img2,
-      star: '4.2',
+      starRating: '4.2',
+      star: star,
     },
   ];
 
@@ -72,6 +77,7 @@ const Shop_Hair_Artists = ({navigation}) => {
                   title: item.item.title,
                   image: item.item.image,
                   tag: item.item.tag,
+                  starRating: item.item.starRating,
                   star: item.item.star,
                 })
               }>
@@ -79,6 +85,7 @@ const Shop_Hair_Artists = ({navigation}) => {
                 title={item.item.title}
                 image={item.item.image}
                 tag={item.item.tag}
+                starRating={item.item.starRating}
                 star={item.item.star}
                 buttonText={'View Details'}
               />

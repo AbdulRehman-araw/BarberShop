@@ -29,9 +29,9 @@ const Service_List_Card = ({title, time, price}) => {
           onValueChange={newValue => setToggleCheckBox(newValue)}
           tintColors={{true: 'purple', false: '#ccc'}}
         />
-        <View style={{}}>
+        <View style={{justifyContent: 'center'}}>
           <Text style={styles.boldText}>{title}</Text>
-          <Text style={styles.lightText}>{time}</Text>
+          {time ? <Text style={styles.lightText}>{time}</Text> : <View></View>}
         </View>
       </View>
       <View>

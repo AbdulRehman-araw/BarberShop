@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
-const Artists_Card = ({title, image, tag, star, buttonText}) => {
+const Artists_Card = ({title, image, tag, star, starRating, buttonText}) => {
   return (
     <View style={{marginVertical: 15}}>
       <View
@@ -27,7 +27,14 @@ const Artists_Card = ({title, image, tag, star, buttonText}) => {
             {title}
           </Text>
           <Text style={{fontSize: 12, lineHeight: 20}}>{tag}</Text>
-          <Text style={{fontSize: 12, lineHeight: 20}}>{star}</Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}>
+            <Text style={{fontSize: 14}}>{starRating}</Text>
+            <Image source={star} style={{height: 10, width: 10, left: 5}} />
+          </View>
           <TouchableOpacity
             style={{
               backgroundColor: 'purple',
