@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import Service_List_Card from '../Components/Service_List_Card';
-import CustomButton from './../Components/CustomButton';
+import Button from './../Components/Button';
 
 const Artist_detail = ({route, navigation}) => {
   const {title, starRating, tag, star, image} = route.params;
@@ -42,7 +42,7 @@ const Artist_detail = ({route, navigation}) => {
   ];
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, marginBottom: 40}}>
       <View style={{flex: 0.3}}>
         <Image
           source={require('../assets/Artists/artist_detail.png')}
@@ -125,7 +125,7 @@ const Artist_detail = ({route, navigation}) => {
           />
         </View>
         <View style={{justifyContent: 'flex-end'}}>
-          <CustomButton
+          <Button
             title="Book Now"
             navigation={() => navigation.navigate('BookNow')}
           />

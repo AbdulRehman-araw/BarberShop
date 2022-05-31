@@ -6,7 +6,7 @@ import Shop_Hair_Artists from './Shop_Hair_Artists';
 const Home = ({navigation}) => {
   return (
     <View
-      style={{flex: 1, backgroundColor: 'purple', justifyContent: 'flex-end'}}>
+      style={{flex: 1, backgroundColor: '#570861', justifyContent: 'flex-end'}}>
       <View
         style={{
           flex: 0.9,

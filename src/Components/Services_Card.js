@@ -18,7 +18,7 @@ export default Services_Card;
 
 const styles = StyleSheet.create({
   mainView: {
-    marginHorizontal: 8,
+    marginHorizontal: 10,
     marginVertical: 10,
     width: '90%',
     alignItems: 'center',
@@ -26,15 +26,15 @@ const styles = StyleSheet.create({
   content: {
     backgroundColor: 'pink',
     elevation: 6,
-    borderRadius: 20,
-    height: 60,
-    width: 60,
+    borderRadius: 10,
+    height: 40,
+    width: 40,
     justifyContent: 'center',
     alignItems: 'center',
   },
   image: {
-    height: 60,
-    width: 60,
+    height: 40,
+    width: 40,
     alignSelf: 'center',
   },
   text: {

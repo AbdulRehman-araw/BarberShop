@@ -1,9 +1,15 @@
-import {StyleSheet, Text, View, FlatList, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  Image,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import Date from '../Components/Date';
 import Slots from '../Components/Slots';
-import CustomButton from './../Components/CustomButton';
-import Service_List_Card from './../Components/Service_List_Card';
+import Button from './../Components/Button';
 
 const BookNow = ({navigation}) => {
   const data = [
@@ -147,7 +153,7 @@ const BookNow = ({navigation}) => {
         </View>
 
         <View>
-          <CustomButton
+          <Button
             title="Proceed to Payment"
             navigation={() => navigation.navigate('Home')}
           />
@@ -162,7 +168,7 @@ export default BookNow;
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: 'purple',
+    backgroundColor: '#570861',
     justifyContent: 'flex-end',
   },
   content: {

@@ -67,8 +67,8 @@ const Shop_Hair_Artists = ({navigation}) => {
           showsVerticalScrollIndicator={false}
           data={artists}
           keyExtractor={(item, index) => index}
-          ListFooterComponent={() => <View style={{height: 15}} />}
-          ListHeaderComponent={() => <View style={{height: 15}} />}
+          ListFooterComponent={() => <View style={{height: 45}} />}
+          ListHeaderComponent={() => <View style={{height: 0}} />}
           renderItem={item => (
             <TouchableOpacity
               activeOpacity={0.9}

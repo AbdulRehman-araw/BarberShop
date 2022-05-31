@@ -12,11 +12,11 @@ const Artists_Card = ({title, image, tag, star, starRating, buttonText}) => {
           borderRadius: 20,
           flexDirection: 'row',
           justifyContent: 'space-around',
-          height: 160,
+          height: 140,
           width: '90%',
           alignSelf: 'center',
         }}>
-        <View style={{paddingTop: 30}}>
+        <View style={{paddingTop: 15}}>
           <Text
             style={{
               fontSize: 16,
@@ -50,7 +50,7 @@ const Artists_Card = ({title, image, tag, star, starRating, buttonText}) => {
         <View style={{top: -45, elevation: 6}}>
           <Image
             source={image}
-            style={{width: 120, height: 180, borderRadius: 20}}
+            style={{width: 100, height: 160, borderRadius: 20}}
           />
         </View>
       </View>
