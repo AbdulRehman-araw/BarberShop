@@ -18,7 +18,7 @@ const Sign_Up = ({navigation}) => {
           style={{
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: 'purple',
+            backgroundColor: '#570861',
             width: '100%',
             height: '35%',
             borderBottomLeftRadius: 100,
@@ -59,7 +59,7 @@ const Sign_Up = ({navigation}) => {
         <View style={{width: '85%', marginVertical: 20}}>
           <CustomButton
             title="Sign Up"
-            backgroundColor="purple"
+            backgroundColor="#570861"
             color="#fff"
             onPress={() => navigation.navigate('bottom')}
           />

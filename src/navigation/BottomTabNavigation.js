@@ -1,15 +1,23 @@
 import {StyleSheet, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 
+/* ------------------------------- navigation ------------------------------- */
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+/* --------------------------------- Screens -------------------------------- */
 import Artist_detail from './../Screens/Artist_detail';
 import BookNow from './../Screens/BookNow';
-import MyTabBar from '../Components/MyTabBar';
 import Home from './../Screens/Home';
 import Popular_services from './../Screens/Popular_services';
+
+/* ------------------------------- Components ------------------------------- */
+import MyTabBar from '../Components/MyTabBar';
+
+/* ---------------------------------- Icons --------------------------------- */
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+/* -------------------------------- HomeStack ------------------------------- */
 const HomeStack = () => {
   const Stack = createNativeStackNavigator();
   return (
@@ -67,6 +75,7 @@ const HomeStack = () => {
   );
 };
 
+/* ------------------------------- Bottom Tab ------------------------------- */
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigation = () => {
@@ -118,4 +127,5 @@ const BottomTabNavigation = () => {
 
 export default BottomTabNavigation;
 
+/* --------------------------------- Styles --------------------------------- */
 const styles = StyleSheet.create({});

@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
+
+/* ------------------------------- Components ------------------------------- */
 import Service_List_Card from '../Components/Service_List_Card';
 import Button from './../Components/Button';
 

@@ -1,12 +1,19 @@
-import {StyleSheet, Text, View, ImageBackground, Image} from 'react-native';
-import React, {useEffect} from 'react';
+import {StyleSheet, Animated, View, ImageBackground} from 'react-native';
+import React, {useEffect, useRef} from 'react';
+import {transform} from '@babel/core';
 
 const SplashScreen = ({navigation}) => {
+  const position = useRef(new Animated.ValueXY({x: 0, y: -300})).current;
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate('signIn');
     }, 3000);
-  }, []);
+    Animated.spring(position, {
+      toValue: {x: 0, y: 0},
+      stiffness: 200,
+      useNativeDriver: true,
+    }).start();
+  }, [position]);
 
   return (
     <View style={{flex: 1}}>
@@ -18,15 +25,16 @@ const SplashScreen = ({navigation}) => {
           width: '100%',
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'purple',
+          backgroundColor: '#570861',
         }}>
-        <Image
+        <Animated.Image
           source={require('../assets/Logo/logo.png')}
           style={{
-            height: 250,
-            width: 180,
+            height: 350,
+            width: 280,
             tintColor: '#fff',
             shadowOffset: {height: 50, width: 50},
+            transform: [{translateX: position.x}, {translateY: position.y}],
           }}
           resizeMode="contain"
         />

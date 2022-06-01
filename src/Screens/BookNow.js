@@ -7,6 +7,8 @@ import {
   ScrollView,
 } from 'react-native';
 import React from 'react';
+
+/* ------------------------------- Components ------------------------------- */
 import Date from '../Components/Date';
 import Slots from '../Components/Slots';
 import Button from './../Components/Button';
@@ -40,30 +42,6 @@ const BookNow = ({navigation}) => {
     {
       date: 7,
       day: 'Sun',
-    },
-  ];
-
-  const time = [
-    {
-      time: '8:00',
-    },
-    {
-      time: '8:00',
-    },
-    {
-      time: '8:00',
-    },
-    {
-      time: '8:00',
-    },
-    {
-      time: '8:00',
-    },
-    {
-      time: '8:00',
-    },
-    {
-      time: '8:00',
     },
   ];
 
@@ -141,7 +119,6 @@ const BookNow = ({navigation}) => {
             </View>
           </View>
         </View>
-
         <View>
           <View style={styles.padding}>
             <Text style={styles.boldText}>Service List</Text>
@@ -151,7 +128,6 @@ const BookNow = ({navigation}) => {
             <Text style={[styles.boldText, styles.textBorder]}>$45</Text>
           </View>
         </View>
-
         <View>
           <Button
             title="Proceed to Payment"
@@ -213,9 +189,11 @@ const styles = StyleSheet.create({
   availableSlots: {
     flexWrap: 'wrap-reverse',
     alignItems: 'flex-end',
+    width: '90%',
+    alignSelf: 'flex-end',
   },
   padding: {
-    paddingVertical: 15,
+    paddingVertical: 6,
   },
   outerCircle: {
     borderRadius: 20,

@@ -1,5 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+
+/* --------------------------------- Screens -------------------------------- */
 import Popular_services from './Popular_services';
 import Shop_Hair_Artists from './Shop_Hair_Artists';
 

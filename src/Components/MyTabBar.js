@@ -4,6 +4,12 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const MyTabBar = ({state, descriptors, navigation}) => {
+  const icons = [
+    <Icon name="home" size={16} color="#cdcdcd" />,
+    <Icon name="bell" size={16} color="#cdcdcd" />,
+    <Icon name="calendar" size={16} color="#cdcdcd" />,
+    <Icon name="cog" size={16} color="#cdcdcd" />,
+  ];
   return (
     <View
       style={{
@@ -14,12 +20,19 @@ const MyTabBar = ({state, descriptors, navigation}) => {
         alignItems: 'center',
         height: 50,
         bottom: 12,
-        left: 36,
-        right: 36,
+        left: 48,
+        right: 48,
         borderRadius: 10,
       }}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
+        const icon =
+          options.tabBarIcon !== undefined
+            ? options.tabBarIcon
+            : options.title !== undefined
+            ? options.title
+            : route.name;
+
         const label =
           options.tabBarLabel !== undefined
             ? options.tabBarLabel
@@ -67,7 +80,7 @@ const MyTabBar = ({state, descriptors, navigation}) => {
               borderRadius: 10,
               marginHorizontal: 18,
             }}>
-            <Text>{label}</Text>
+            {icons[index]}
           </TouchableOpacity>
         );
       })}
